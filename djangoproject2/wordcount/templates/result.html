@@ -1,0 +1,13 @@
+<h1>    your text has {{total}} words!     </h1>
+
+<a href = "{% url 'home' %}"> retry </a>
+<br>
+<h2> input text </h2>
+{{full}}
+
+<h2> word count </h2>
+
+{% for word, num in dictionary %} 
+    {{word}}  :  {{num}}
+    <br>
+{% endfor %}
