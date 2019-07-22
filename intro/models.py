@@ -1,5 +1,4 @@
 from django.db import models
-from multiselectfield import MultiSelectField
 
 # Create your models here.
 MY_CHOICES = (('1', '새벽'),
