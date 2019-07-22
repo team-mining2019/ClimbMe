@@ -1,0 +1,11 @@
+<h1> WELCOME TO MY BLOG </h1>
+
+{% for blog in blogs.all%}
+
+    <h2> {{blog.title}} </h2>
+
+    <p> {{blog.pub_data}} </p>
+    <p> {{blog.body}} </p>
+    <br>
+    <br>
+{% endfor %}

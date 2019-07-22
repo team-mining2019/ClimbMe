@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block contents %}
+<body>  
+    {%for blog in posts%}
+    <div class="card" style="width: 35rem; margin: auto;">
+            <div class="body">
+              <h5 class="title">Title : {{blog.title}}</h5>
+              <h6 class="date">Date : {{blog.pub_data}}</h6>
+              <p class="content">Content : {{blog.summary}} <a href="{%url 'detail' blog.id %}">..more</a></p>
+            </div>
+    </div>
+    <br>
+    {%endfor%}
+            
+<div class = "container">
+{% if posts.has_previous %}
+<a href="?page=1">First</a>
+<a href="?page={{posts.privious_page_number}}">Previous</a>
+{%endif%}
+
+<span>{{posts.number}}</span>
+<span>of</span>
+<span>{{posts.paginator.num_pages}}</span>
+
+{%if posts.has_next%}
+<a href="?page={{posts.next_page_number}}">Next</a>
+<a href="?page={{posts.paginator.num_pages}}">Last</a>
+{%endif%}
+
+</div>
+</body>
+
+{% endblock %}
+
+

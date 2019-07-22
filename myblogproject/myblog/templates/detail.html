@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<body>
+        <h1> {{blog.id}} post </h1>
+        <br> <br>
+        
+        <h1>Title : {{blog.title}}</h1>
+        <p>Date : {{blog.pub_data}}</p>
+        <p>Content : {{blog.body}} </p>
+
+
+</body>
+    
+
+{% endblock %}
