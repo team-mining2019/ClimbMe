@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'intro.apps.IntroConfig',
     'login.apps.LoginConfig',
     'mypage.apps.MypageConfig',
-    'multiselectfield',
 ]
 
 MIDDLEWARE = [
