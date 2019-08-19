@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block contents %}
+<div class="container">
+
+<h1> update! </h1>
+<h2> hello {{ user.profile.id }} </h2>
+<h3> {{user.username}} </h3>
+
+<p> now nickname :  {{ user.profile.nickname}} </p>
+<br>
+<p> now year in school :  {{ user.profile.year_in_school }} </p>
+<br>
+<p> now year in school :  {{ user.profile.get_year_in_school_display }} </p>
+
+
+
+<form method = "POST" action="{%url 'changed' user.id %}">
+    {% csrf_token %}
+    Nickname:
+    <br>
+    <input name="nickname" type="text" value="">
+    <br>
+    <hr>
+    {% for year_in_school in user.profile.get_choices %}
+        <li>  
+            <label for="{{year_in_school}}"><input type="radio" name="my_choice_field" value="{{year_in_school}}" id="choice{{ forloop.counter }}">{{year_in_school}}</label>
+        </li>
+    {% endfor %}
+    <br>
+    <hr>
+    <br>
+    <input class="btn btn-primary" type="submit" value="Change your info!">
+    
+</form>
+
+</div>
+{%endblock%}

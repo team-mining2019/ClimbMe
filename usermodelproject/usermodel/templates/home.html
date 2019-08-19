@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<h1> HOME </h1>
+{{user.username}}
+<br>
+<br>
+<hr>
+{{user.profile.nickname}}
+
+{% if user.is_active %}
+<h3>hihihihi</h3>
+<a href="{% url 'logout' %}"> LOGOUT</a>
+<hr>
+<br>
+
+<a href="{% url 'update' user.id %}"> UPDATE</a>
+<br>
+<br>
+
+{{ user.id }}
+
+{% else %}
+<a href="{% url 'signup' %}"> SIGNUP</a>
+<hr>
+<br>
+<a href="{% url 'login' %}"> LOGIN</a>
+<br>
+{% endif %}
+
+{% endblock %}
